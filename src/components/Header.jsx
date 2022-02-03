@@ -14,7 +14,7 @@ function Header({ text,bgColor,textColor}) {
 }
 Header.defaultProps = {
   //when no props is passed in
-  text: "hihi",
+  text: "React Review App",
   bgColor: "black",
   textColor:'#ff6a95'
 };

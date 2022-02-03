@@ -1,10 +1,12 @@
 import Card from "./share/Card";
 import { useState } from "react";
 import Button from "./share/Button";
-function FeedbackForm() {
+import RatingSelect from "./RatingSelect";
+function FeedbackForm({handleAdd}) {
 
 	const[text,setText]=useState('')
-	const[btnDisabled,setBtnDisabled]=useState(true)
+	const[rating,setRating]=useState(10)//10 is default value
+	const[btnDisabled,setBtnDisabled]=useState(true)//true is default value
 	const[message,setMessage]=useState('')
 
 	const handleTextChange=(e)=>{
@@ -21,10 +23,23 @@ function FeedbackForm() {
 		setText(e.target.value);
 	}
 
+	const handleSubmit=(e)=>{
+		e.preventDefault()
+		if(text.trim().length>=10){
+			const newFeedback={
+				text:text,
+				rating:rating
+			}
+			handleAdd((newFeedback));
+		}
+	}
+
 	return <Card>
-		<form>
+		<form onSubmit={handleSubmit}>
 			<h2>
 				How would you rate your service with us?
+				</h2>
+				<RatingSelect select={(rating)=>setRating(rating)}/>
 				<div className="input-group">
 					<input 
 					onChange={handleTextChange} 
@@ -39,7 +54,6 @@ function FeedbackForm() {
 						&&<div className="message">{message}</div>}
 					</div>
 				</div>
-			</h2>
 		</form>
 		</Card>;
 }

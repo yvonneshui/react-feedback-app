@@ -1,5 +1,7 @@
 # About
 
+Deployed here: https://zealous-franklin-b5d855.netlify.app/
+
 This app allows users to add, update and delete feedback. It uses a mock REST api with json-server.
 
 This project goes over all of the fundamentals of React including...

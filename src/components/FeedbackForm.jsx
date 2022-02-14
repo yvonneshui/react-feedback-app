@@ -10,7 +10,7 @@ function FeedbackForm() {
 	const[rating,setRating]=useState(10)
 	const[btnDisabled,setBtnDisabled]=useState(true)
 	const[message,setMessage]=useState('')
-
+	//get functions from context
 	const{addFeedback,feedbackEdit,updateFeedback}=useContext(FeedbackContext)
 
 	useEffect(()=>{
@@ -49,7 +49,7 @@ function FeedbackForm() {
 				addFeedback(newFeedback)
 			}
 		}
-		
+
 		setText('')
 	}
 

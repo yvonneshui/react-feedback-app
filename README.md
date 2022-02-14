@@ -1,6 +1,6 @@
 # About
 
-Deployed here: https://zealous-franklin-b5d855.netlify.app/
+Deployed here: https://61fd8e5be9733a00c3acba99--zealous-franklin-b5d855.netlify.app/
 
 This app allows users to add, update and delete feedback. It uses a mock REST api with json-server.
 
